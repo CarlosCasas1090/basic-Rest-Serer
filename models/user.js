@@ -44,7 +44,8 @@ const userSchema = Schema
 
 userSchema.methods.toJSON = function()
 {
-    const {__v, password, ...user} = this.toObject(); //excluding __v and password from user object
+    const {__v, password, _id, ...user} = this.toObject(); //excluding __v and password from user object
+    user.uid = _id; //change _id description to uid
     return user;
 }
 

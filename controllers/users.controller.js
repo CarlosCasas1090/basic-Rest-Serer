@@ -70,12 +70,13 @@ const usersGet = async(req, res) =>
  const usersDelete = async(req, res) =>
  {
     const {id} = req.params;
+    //const uid = req.uid;
 
     //Delete permanently
     //const user = await User.findByIdAndDelete(id);
-    const user = await User.findByIdAndUpdate(id, {status: false}); //just update status to false instead of delete user
+    const user = await User.findByIdAndUpdate(id, {status: false}); //just update status to false instead of delete user  
 
-    res.json(user);
+    res.json(user); 
  }
 
 
